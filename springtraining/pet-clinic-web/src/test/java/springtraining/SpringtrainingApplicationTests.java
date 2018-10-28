@@ -1,4 +1,4 @@
-package by.tibon.springtraining;
+package springtraining;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
