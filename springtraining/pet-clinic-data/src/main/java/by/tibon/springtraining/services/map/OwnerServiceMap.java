@@ -2,9 +2,12 @@ package by.tibon.springtraining.services.map;
 
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
+
 import by.tibon.springtraining.model.Owner;
 import by.tibon.springtraining.services.OwnerService;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override

@@ -7,8 +7,6 @@ import by.tibon.springtraining.model.Owner;
 import by.tibon.springtraining.model.Vet;
 import by.tibon.springtraining.services.OwnerService;
 import by.tibon.springtraining.services.VetService;
-import by.tibon.springtraining.services.map.OwnerServiceMap;
-import by.tibon.springtraining.services.map.VetServiceMap;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
@@ -16,15 +14,14 @@ public class DataInitializer implements CommandLineRunner {
 	private OwnerService ownerService;
 	private VetService vetService;
 
-	public DataInitializer() {
+	public DataInitializer(OwnerService ownerService, VetService vetService) {
 		super();
-		ownerService = new OwnerServiceMap();
-		vetService = new VetServiceMap();
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
 
 		Owner owner1 = new Owner();
 		owner1.setId(1L);
@@ -34,9 +31,9 @@ public class DataInitializer implements CommandLineRunner {
 		ownerService.save(owner1);
 
 		Owner owner2 = new Owner();
-		owner1.setId(2L);
-		owner1.setFirstName("Kolia");
-		owner1.setLastName("Monarhovich");
+		owner2.setId(2L);
+		owner2.setFirstName("Kolia");
+		owner2.setLastName("Monarhovich");
 
 		ownerService.save(owner2);
 
@@ -50,9 +47,9 @@ public class DataInitializer implements CommandLineRunner {
 		vetService.save(vet1);
 
 		Vet vet2 = new Vet();
-		vet1.setId(2L);
-		vet1.setFirstName("Dima");
-		vet1.setLastName("Sinkevich");
+		vet2.setId(2L);
+		vet2.setFirstName("Dima");
+		vet2.setLastName("Sinkevich");
 
 		vetService.save(vet2);
 
