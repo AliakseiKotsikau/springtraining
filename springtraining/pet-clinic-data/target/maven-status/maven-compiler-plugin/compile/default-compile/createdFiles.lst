@@ -1,0 +1,14 @@
+by\tibon\springtraining\model\Person.class
+by\tibon\springtraining\services\map\PetServiceMap.class
+by\tibon\springtraining\services\VetService.class
+by\tibon\springtraining\services\map\VetServiceMap.class
+by\tibon\springtraining\model\Pet.class
+by\tibon\springtraining\services\map\OwnerServiceMap.class
+by\tibon\springtraining\model\BaseEntity.class
+by\tibon\springtraining\services\OwnerService.class
+by\tibon\springtraining\services\CrudService.class
+by\tibon\springtraining\services\PetService.class
+by\tibon\springtraining\model\PetType.class
+by\tibon\springtraining\model\Owner.class
+by\tibon\springtraining\model\Vet.class
+by\tibon\springtraining\services\map\AbstractMapService.class
