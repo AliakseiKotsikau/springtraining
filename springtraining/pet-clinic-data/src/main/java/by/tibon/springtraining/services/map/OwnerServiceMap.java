@@ -11,6 +11,7 @@ import by.tibon.springtraining.services.PetService;
 import by.tibon.springtraining.services.PetTypeService;
 
 @Service
+//@Profile("map")
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	private final PetTypeService petTypeService;
