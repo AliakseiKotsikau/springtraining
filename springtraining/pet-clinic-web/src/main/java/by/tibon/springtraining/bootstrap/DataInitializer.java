@@ -10,10 +10,12 @@ import by.tibon.springtraining.model.Pet;
 import by.tibon.springtraining.model.PetType;
 import by.tibon.springtraining.model.Speciality;
 import by.tibon.springtraining.model.Vet;
+import by.tibon.springtraining.model.Visit;
 import by.tibon.springtraining.services.OwnerService;
 import by.tibon.springtraining.services.PetTypeService;
 import by.tibon.springtraining.services.SpecialityService;
 import by.tibon.springtraining.services.VetService;
+import by.tibon.springtraining.services.VisitService;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
@@ -22,13 +24,15 @@ public class DataInitializer implements CommandLineRunner {
 	private VetService vetService;
 	private PetTypeService petTypeService;
 	private SpecialityService specialityService;
+	private VisitService visitService;
 
-	public DataInitializer(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+	public DataInitializer(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
 		super();
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;
 		this.specialityService = specialityService;
+		this.visitService = visitService;
 	}
 
 	@Override
@@ -91,6 +95,13 @@ public class DataInitializer implements CommandLineRunner {
 		owner2.getPets().add(koliasCat);
 
 		ownerService.save(owner2);
+
+		Visit catVisit = new Visit();
+		catVisit.setPet(koliasCat);
+		catVisit.setDate(LocalDate.now());
+		catVisit.setDescription("Kotik-Kotik");
+
+		visitService.save(catVisit);
 
 		System.out.println("Owners saved ......");
 
