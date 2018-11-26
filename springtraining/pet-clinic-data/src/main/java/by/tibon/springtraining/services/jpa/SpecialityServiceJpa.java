@@ -16,6 +16,11 @@ public class SpecialityServiceJpa implements SpecialityService {
 
 	private SpecialtyRepository specialityRepository;
 
+	public SpecialityServiceJpa(SpecialtyRepository specialityRepository) {
+		super();
+		this.specialityRepository = specialityRepository;
+	}
+
 	@Override
 	public Set<Speciality> findAll() {
 		Set<Speciality> specs = new HashSet<>();

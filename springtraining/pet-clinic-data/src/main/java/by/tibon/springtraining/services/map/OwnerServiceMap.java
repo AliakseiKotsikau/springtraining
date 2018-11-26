@@ -2,6 +2,7 @@ package by.tibon.springtraining.services.map;
 
 import java.util.Map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import by.tibon.springtraining.model.Owner;
@@ -11,7 +12,7 @@ import by.tibon.springtraining.services.PetService;
 import by.tibon.springtraining.services.PetTypeService;
 
 @Service
-//@Profile("map")
+@Profile({ "default", "map" })
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	private final PetTypeService petTypeService;

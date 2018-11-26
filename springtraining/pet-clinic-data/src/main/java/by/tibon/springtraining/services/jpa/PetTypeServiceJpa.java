@@ -16,9 +16,9 @@ public class PetTypeServiceJpa implements PetTypeService {
 
 	private PetTypeRepository petTypeRepository;
 
-	public PetTypeServiceJpa(by.tibon.springtraining.repository.PetTypeRepository petTypeRepository) {
+	public PetTypeServiceJpa(PetTypeRepository petTypeRepository) {
 		super();
-		petTypeRepository = petTypeRepository;
+		this.petTypeRepository = petTypeRepository;
 	}
 
 	@Override
